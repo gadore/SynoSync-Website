@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SynoSync | 让群晖同步真正进入你的 iPhone 文件工作流</title>
-    <meta name="description" content="SynoSync 让群晖 NAS 文件夹同步到 iPhone 与 iPad 上用户授权的任意目录，为 Obsidian 等依赖文件库的 App 提供更灵活的同步基础。">
+    <title>SynoSync | Bring Synology sync into your iPhone file workflow</title>
+    <meta name="description" content="SynoSync syncs Synology NAS folders to any user-authorized directory on iPhone and iPad, so Obsidian and other file-based apps can work directly with your files.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -333,10 +333,11 @@
         .pill {
             padding: 9px 14px;
             border-radius: 999px;
-            background: rgba(15, 124, 109, 0.08);
-            color: #d9fff8;
-            border: 1px solid rgba(217, 255, 248, 0.12);
+            background: rgba(255, 250, 242, 0.92);
+            color: #082f29;
+            border: 1px solid rgba(15, 124, 109, 0.28);
             font-size: 13px;
+            font-weight: 700;
         }
 
         .section {
@@ -588,14 +589,14 @@
         <header class="site-header">
             <div class="container">
                 <nav class="nav">
-                    <a class="brand" href="#top" aria-label="SynoSync 首页">
+                    <a class="brand" href="#top" data-i18n-aria-label="brandAriaLabel">
                         <span class="brand-mark">S</span>
                         <span>SynoSync</span>
                     </a>
                     <div class="nav-links">
-                        <a href="#features">核心能力</a>
-                        <a href="#story">适用场景</a>
-                        <a href="#download">下载</a>
+                        <a href="#features" data-i18n="navFeatures"></a>
+                        <a href="#story" data-i18n="navStory"></a>
+                        <a href="#download" data-i18n="navDownload"></a>
                     </div>
                 </nav>
             </div>
@@ -604,53 +605,53 @@
         <main id="top">
             <section class="container hero">
                 <div class="hero-copy">
-                    <div class="eyebrow">为群晖 NAS 与 iOS 文件工作流重新设计</div>
-                    <h1>让群晖同步，真正进入你的文件库生态。</h1>
-                    <p class="lead">SynoSync 解决了群晖官方 Drive 应用无法把本地同步目标设置到其他 App 可用目录的问题。你可以把 NAS 文件夹同步到用户授权的任意位置，让 Obsidian、文档编辑器、阅读器等依赖文件库的 App 获得更灵活的同步基础。</p>
+                    <div class="eyebrow" data-i18n="eyebrow"></div>
+                    <h1 data-i18n="heroTitle"></h1>
+                    <p class="lead" data-i18n="heroLead"></p>
                     <div class="hero-actions">
-                        <a class="button" href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" rel="noopener noreferrer">App Store 按钮占位</a>
-                        <a class="button-secondary" href="#features">查看核心功能</a>
+                        <a class="button" href="https://apps.apple.com/us/app/v2rmb/id6762731663" target="_blank" rel="noopener noreferrer" data-i18n="heroPrimaryCta"></a>
+                        <a class="button-secondary" href="#features" data-i18n="heroSecondaryCta"></a>
                     </div>
                     <div class="hero-meta">
                         <div class="mini-card">
-                            <strong>任意授权目录</strong>
-                            <span>同步到“文件”App 可访问的位置，而不是被官方客户端锁在自身沙盒里。</span>
+                            <strong data-i18n="metaOneTitle"></strong>
+                            <span data-i18n="metaOneBody"></span>
                         </div>
                         <div class="mini-card">
-                            <strong>三种同步方向</strong>
-                            <span>支持 NAS 到本地、本地到 NAS，以及更灵活的双向同步。</span>
+                            <strong data-i18n="metaTwoTitle"></strong>
+                            <span data-i18n="metaTwoBody"></span>
                         </div>
                         <div class="mini-card">
-                            <strong>前台与后台并行支持</strong>
-                            <span>既能手动长时同步，也能按计划自动触发后台任务。</span>
+                            <strong data-i18n="metaThreeTitle"></strong>
+                            <span data-i18n="metaThreeBody"></span>
                         </div>
                     </div>
                 </div>
 
-                <aside class="hero-panel" aria-label="同步流程示意">
+                <aside class="hero-panel" data-i18n-aria-label="heroPanelAriaLabel">
                     <div class="device-frame">
                         <div class="device-notch"></div>
                         <div class="sync-flow">
                             <div class="flow-node">
-                                <strong>群晖 NAS</strong>
-                                <div>选择共享目录，直接使用 DSM / FileStation 能力建立同步任务。</div>
+                                <strong data-i18n="flowOneTitle"></strong>
+                                <div data-i18n="flowOneBody"></div>
                             </div>
                             <div class="flow-arrow"></div>
                             <div class="flow-node">
                                 <strong>SynoSync</strong>
-                                <div>持久化目录授权、处理变更检测、冲突策略与同步执行。</div>
+                                <div data-i18n="flowTwoBody"></div>
                             </div>
                             <div class="flow-arrow"></div>
                             <div class="flow-node">
-                                <strong>你的文件型 App</strong>
-                                <div>Obsidian、Markdown 编辑器、阅读器或任何依赖文件库的工作流都能受益。</div>
+                                <strong data-i18n="flowThreeTitle"></strong>
+                                <div data-i18n="flowThreeBody"></div>
                             </div>
                         </div>
                     </div>
                     <div class="status-strip">
-                        <span class="pill">Security-Scoped Bookmark</span>
-                        <span class="pill">Background Sync</span>
-                        <span class="pill">Conflict Control</span>
+                        <span class="pill" data-i18n="pillOne"></span>
+                        <span class="pill" data-i18n="pillTwo"></span>
+                        <span class="pill" data-i18n="pillThree"></span>
                     </div>
                 </aside>
             </section>
@@ -658,29 +659,29 @@
             <section class="section" id="features">
                 <div class="container">
                     <div class="section-title">
-                        <h2>核心能力，不再被官方同步路径限制。</h2>
-                        <p>SynoSync 的重点不是重复做一个普通网盘客户端，而是补上 iOS 文件工作流里最关键的一块连接层，让群晖成为更多专业 App 的底层同步来源。</p>
+                        <h2 data-i18n="featuresTitle"></h2>
+                        <p data-i18n="featuresLead"></p>
                     </div>
                     <div class="feature-grid">
                         <article class="feature-card">
                             <div class="feature-index">01</div>
-                            <h3>同步到任意用户授权目录</h3>
-                            <p>通过系统文件选择器选择本地目录，并持久保存授权，后续仍可稳定访问该位置完成同步。</p>
+                            <h3 data-i18n="featureOneTitle"></h3>
+                            <p data-i18n="featureOneBody"></p>
                         </article>
                         <article class="feature-card">
                             <div class="feature-index">02</div>
-                            <h3>适配文件库型应用</h3>
-                            <p>为 Obsidian 这类直接读写文件库的 App 提供更自然的 NAS 同步方式，避免额外导入导出流程。</p>
+                            <h3 data-i18n="featureTwoTitle"></h3>
+                            <p data-i18n="featureTwoBody"></p>
                         </article>
                         <article class="feature-card">
                             <div class="feature-index">03</div>
-                            <h3>灵活的同步策略</h3>
-                            <p>支持 NAS 到本地、本地到 NAS、双向同步，以及保留较新版本或偏向本地/远端等冲突处理策略。</p>
+                            <h3 data-i18n="featureThreeTitle"></h3>
+                            <p data-i18n="featureThreeBody"></p>
                         </article>
                         <article class="feature-card">
                             <div class="feature-index">04</div>
-                            <h3>兼顾手动与自动同步</h3>
-                            <p>既可以进入前台长时同步，也可以让系统在合适时机触发后台任务，平衡可靠性与能耗。</p>
+                            <h3 data-i18n="featureFourTitle"></h3>
+                            <p data-i18n="featureFourBody"></p>
                         </article>
                     </div>
                 </div>
@@ -689,16 +690,16 @@
             <section class="section" id="story">
                 <div class="container story-grid">
                     <article class="story-panel">
-                        <p class="quote">“不是把文件同步进另一个封闭 App，而是把群晖接进你已经在用的那套生产力文件流。”</p>
-                        <p>如果你用群晖保存笔记库、研究资料、Markdown 仓库或项目文档，那么真正的需求通常不是“下载一份副本”，而是“让已有 App 直接使用这套文件”。SynoSync 的价值就在这里。</p>
+                        <p class="quote" data-i18n="storyQuote"></p>
+                        <p data-i18n="storyBody"></p>
                         <div class="stats">
                             <div class="stat">
-                                <strong>iPhone / iPad</strong>
-                                <span>围绕 iOS 文件系统授权模型设计，不依赖非标准绕过方式。</span>
+                                <strong data-i18n="statOneTitle"></strong>
+                                <span data-i18n="statOneBody"></span>
                             </div>
                             <div class="stat">
-                                <strong>DSM 6 / 7</strong>
-                                <span>面向群晖生态的文件同步场景，聚焦目录映射与稳定执行。</span>
+                                <strong data-i18n="statTwoTitle"></strong>
+                                <span data-i18n="statTwoBody"></span>
                             </div>
                         </div>
                     </article>
@@ -708,26 +709,26 @@
                             <div class="workflow-step">
                                 <strong>1</strong>
                                 <div>
-                                    <h3>连接你的群晖</h3>
-                                    <p>登录 DSM，浏览共享目录，并指定需要同步的远端文件夹。</p>
+                                    <h3 data-i18n="workflowOneTitle"></h3>
+                                    <p data-i18n="workflowOneBody"></p>
                                 </div>
                             </div>
                             <div class="workflow-step">
                                 <strong>2</strong>
                                 <div>
-                                    <h3>选择本地目标位置</h3>
-                                    <p>在“文件”App 可见的目录中选定目标文件夹，例如某个笔记应用的文库目录。</p>
+                                    <h3 data-i18n="workflowTwoTitle"></h3>
+                                    <p data-i18n="workflowTwoBody"></p>
                                 </div>
                             </div>
                             <div class="workflow-step">
                                 <strong>3</strong>
                                 <div>
-                                    <h3>按照你的节奏同步</h3>
-                                    <p>可以立即手动同步，也可以让系统按设定条件自动执行，保持文件库持续更新。</p>
+                                    <h3 data-i18n="workflowThreeTitle"></h3>
+                                    <p data-i18n="workflowThreeBody"></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="note">SynoSync 不绕过 iOS 沙盒。它依赖的是用户明确授权的目录访问机制，因此适合长期、稳定、合规地接入你的文件工作流。</div>
+                        <div class="note" data-i18n="storyNote"></div>
                     </aside>
                 </div>
             </section>
@@ -736,12 +737,12 @@
                 <div class="container">
                     <div class="cta-card">
                         <div class="cta-copy">
-                            <h2>准备把群晖同步带进真正可用的 iOS 文件生态。</h2>
-                            <p class="lead">这里已经预留好 App Store 跳转按钮。等 App 正式上线后，把链接替换成真实地址即可直接用于官网或产品介绍页。</p>
+                            <h2 data-i18n="downloadTitle"></h2>
+                            <p class="lead" data-i18n="downloadLead"></p>
                         </div>
                         <div class="cta-actions">
-                            <a class="button" href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" rel="noopener noreferrer">前往 App Store</a>
-                            <a class="button-secondary" href="#top">返回顶部</a>
+                            <a class="button" href="https://apps.apple.com/us/app/v2rmb/id6762731663" target="_blank" rel="noopener noreferrer" data-i18n="downloadPrimaryCta"></a>
+                            <a class="button-secondary" href="#top" data-i18n="downloadSecondaryCta"></a>
                         </div>
                     </div>
                 </div>
@@ -750,14 +751,475 @@
 
         <footer class="site-footer">
             <div class="container footer-row">
-                <p class="footer-text">© <span id="year"></span> SynoSync. 让群晖文件夹进入你真正会使用的 App 工作流。</p>
-                <p class="footer-text">占位说明：将页面中的 App Store 链接替换为上线后的真实地址即可。</p>
+                <p class="footer-text">© <span id="year"></span> SynoSync. <span data-i18n="footerTagline"></span></p>
+                <a class="footer-text" href="https://gadore.top" target="_blank" rel="noopener noreferrer">https://gadore.top</a>
             </div>
         </footer>
     </div>
 
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        const translations = {
+            "zh-CN": {
+                pageTitle: "SynoSync | 让群晖同步真正进入你的 iPhone 文件工作流",
+                pageDescription: "SynoSync 让群晖 NAS 文件夹同步到 iPhone 与 iPad 上用户授权的任意目录，为 Obsidian 等依赖文件库的 App 提供更灵活的同步基础。",
+                brandAriaLabel: "SynoSync 首页",
+                navFeatures: "核心能力",
+                navStory: "适用场景",
+                navDownload: "下载",
+                eyebrow: "为群晖 NAS 与 iOS 文件工作流重新设计",
+                heroTitle: "让群晖同步，真正进入你的文件库生态。",
+                heroLead: "SynoSync 解决了群晖官方 Drive 应用无法把本地同步目标设置到其他 App 可用目录的问题。你可以把 NAS 文件夹同步到用户授权的任意位置，让 Obsidian、文档编辑器、阅读器等依赖文件库的 App 获得更灵活的同步基础。",
+                heroPrimaryCta: "前往 App Store",
+                heroSecondaryCta: "查看核心功能",
+                metaOneTitle: "任意授权目录",
+                metaOneBody: "同步到“文件”App 可访问的位置，而不是被官方客户端锁在自身沙盒里。",
+                metaTwoTitle: "三种同步方向",
+                metaTwoBody: "支持 NAS 到本地、本地到 NAS，以及更灵活的双向同步。",
+                metaThreeTitle: "前台与后台并行支持",
+                metaThreeBody: "既能手动长时同步，也能按计划自动触发后台任务。",
+                heroPanelAriaLabel: "同步流程示意",
+                flowOneTitle: "群晖 NAS",
+                flowOneBody: "选择共享目录，直接使用 DSM / FileStation 能力建立同步任务。",
+                flowTwoBody: "持久化目录授权、处理变更检测、冲突策略与同步执行。",
+                flowThreeTitle: "你的文件型 App",
+                flowThreeBody: "Obsidian、Markdown 编辑器、阅读器或任何依赖文件库的工作流都能受益。",
+                pillOne: "Security-Scoped Bookmark",
+                pillTwo: "Background Sync",
+                pillThree: "Conflict Control",
+                featuresTitle: "核心能力，不再被官方同步路径限制。",
+                featuresLead: "SynoSync 的重点不是重复做一个普通网盘客户端，而是补上 iOS 文件工作流里最关键的一块连接层，让群晖成为更多专业 App 的底层同步来源。",
+                featureOneTitle: "同步到任意用户授权目录",
+                featureOneBody: "通过系统文件选择器选择本地目录，并持久保存授权，后续仍可稳定访问该位置完成同步。",
+                featureTwoTitle: "适配文件库型应用",
+                featureTwoBody: "为 Obsidian 这类直接读写文件库的 App 提供更自然的 NAS 同步方式，避免额外导入导出流程。",
+                featureThreeTitle: "灵活的同步策略",
+                featureThreeBody: "支持 NAS 到本地、本地到 NAS、双向同步，以及保留较新版本或偏向本地/远端等冲突处理策略。",
+                featureFourTitle: "兼顾手动与自动同步",
+                featureFourBody: "既可以进入前台长时同步，也可以让系统在合适时机触发后台任务，平衡可靠性与能耗。",
+                storyQuote: "“不是把文件同步进另一个封闭 App，而是把群晖接进你已经在用的那套生产力文件流。”",
+                storyBody: "如果你用群晖保存笔记库、研究资料、Markdown 仓库或项目文档，那么真正的需求通常不是“下载一份副本”，而是“让已有 App 直接使用这套文件”。SynoSync 的价值就在这里。",
+                statOneTitle: "iPhone / iPad",
+                statOneBody: "围绕 iOS 文件系统授权模型设计，不依赖非标准绕过方式。",
+                statTwoTitle: "DSM 6 / 7",
+                statTwoBody: "面向群晖生态的文件同步场景，聚焦目录映射与稳定执行。",
+                workflowOneTitle: "连接你的群晖",
+                workflowOneBody: "登录 DSM，浏览共享目录，并指定需要同步的远端文件夹。",
+                workflowTwoTitle: "选择本地目标位置",
+                workflowTwoBody: "在“文件”App 可见的目录中选定目标文件夹，例如某个笔记应用的文库目录。",
+                workflowThreeTitle: "按照你的节奏同步",
+                workflowThreeBody: "可以立即手动同步，也可以让系统按设定条件自动执行，保持文件库持续更新。",
+                storyNote: "SynoSync 不绕过 iOS 沙盒。它依赖的是用户明确授权的目录访问机制，因此适合长期、稳定、合规地接入你的文件工作流。",
+                downloadTitle: "准备把群晖同步带进真正可用的 iOS 文件生态。",
+                downloadLead: "现在已经可以直接跳转到 App Store。打开 SynoSync，把 NAS 文件夹同步到你真正会使用的 iOS 目录里。",
+                downloadPrimaryCta: "前往 App Store",
+                downloadSecondaryCta: "返回顶部",
+                footerTagline: "让群晖文件夹进入你真正会使用的 App 工作流。"
+            },
+            en: {
+                pageTitle: "SynoSync | Bring Synology sync into your iPhone file workflow",
+                pageDescription: "SynoSync syncs Synology NAS folders to any user-authorized directory on iPhone and iPad, so Obsidian and other file-based apps can work directly with your files.",
+                brandAriaLabel: "SynoSync home",
+                navFeatures: "Core Features",
+                navStory: "Use Cases",
+                navDownload: "Download",
+                eyebrow: "Redesigned for Synology NAS and iOS file workflows",
+                heroTitle: "Bring Synology sync into the file apps you actually use.",
+                heroLead: "SynoSync solves the problem of Synology Drive keeping local sync targets inside its own sandbox. You can sync NAS folders to any directory you authorize, so Obsidian, document editors, readers, and other file-based apps can work from the same files directly.",
+                heroPrimaryCta: "View on the App Store",
+                heroSecondaryCta: "Explore features",
+                metaOneTitle: "Any authorized folder",
+                metaOneBody: "Sync to locations visible in the Files app instead of being locked inside the official client sandbox.",
+                metaTwoTitle: "Three sync directions",
+                metaTwoBody: "Support NAS to local, local to NAS, and flexible two-way sync.",
+                metaThreeTitle: "Foreground + background",
+                metaThreeBody: "Run long syncs manually or let iOS trigger background jobs on schedule.",
+                heroPanelAriaLabel: "Sync flow preview",
+                flowOneTitle: "Synology NAS",
+                flowOneBody: "Choose a shared folder and create sync jobs directly with DSM / FileStation capabilities.",
+                flowTwoBody: "Persist folder access, detect changes, apply conflict rules, and run the sync engine.",
+                flowThreeTitle: "Your file-based apps",
+                flowThreeBody: "Obsidian, Markdown editors, readers, and any workflow built around files can benefit.",
+                pillOne: "Security-Scoped Bookmark",
+                pillTwo: "Background Sync",
+                pillThree: "Conflict Control",
+                featuresTitle: "Core capabilities without the official sync-path limits.",
+                featuresLead: "SynoSync is not another generic cloud client. It fills the missing link in iOS file workflows so Synology can become the sync layer behind more professional apps.",
+                featureOneTitle: "Sync to any authorized folder",
+                featureOneBody: "Pick a local folder with the system file picker and keep that access for reliable future syncs.",
+                featureTwoTitle: "Built for file-library apps",
+                featureTwoBody: "Give apps like Obsidian a more natural NAS sync workflow without extra import and export steps.",
+                featureThreeTitle: "Flexible sync policies",
+                featureThreeBody: "Choose NAS to local, local to NAS, or two-way sync with newer, local, remote, or both conflict handling.",
+                featureFourTitle: "Manual and automatic sync",
+                featureFourBody: "Start a long-running foreground sync yourself or let iOS launch background tasks when conditions are right.",
+                storyQuote: "\"Instead of syncing files into another closed app, connect Synology to the productivity file flow you already use.\"",
+                storyBody: "If you keep note vaults, research material, Markdown repositories, or project documents on Synology, the real need is usually not downloading a copy. It is letting the apps you already use work with those same files directly.",
+                statOneTitle: "iPhone / iPad",
+                statOneBody: "Designed around the iOS file authorization model with no unsupported workarounds.",
+                statTwoTitle: "DSM 6 / 7",
+                statTwoBody: "Focused on Synology file-sync scenarios, with stable directory mapping and execution.",
+                workflowOneTitle: "Connect your Synology",
+                workflowOneBody: "Sign in to DSM, browse shared folders, and choose the remote folder you want to sync.",
+                workflowTwoTitle: "Choose the local destination",
+                workflowTwoBody: "Pick a target folder visible in the Files app, such as the library used by your notes app.",
+                workflowThreeTitle: "Sync on your schedule",
+                workflowThreeBody: "Run a sync immediately or let the system execute it automatically under your chosen conditions.",
+                storyNote: "SynoSync does not bypass the iOS sandbox. It relies on user-approved folder access, making it suitable for long-term, stable, compliant file workflows.",
+                downloadTitle: "Ready to bring Synology sync into a truly usable iOS file ecosystem?",
+                downloadLead: "Open SynoSync on the App Store and start syncing NAS folders into the iOS directories you actually work in.",
+                downloadPrimaryCta: "View on the App Store",
+                downloadSecondaryCta: "Back to top",
+                footerTagline: "Bring Synology folders into the app workflow you actually use."
+            },
+            ja: {
+                pageTitle: "SynoSync | Synology 同期を iPhone の本当のファイルワークフローへ",
+                pageDescription: "SynoSync は Synology NAS のフォルダを iPhone / iPad 上のユーザー許可済みディレクトリへ同期し、Obsidian などのファイルベースアプリが同じファイルを直接使えるようにします。",
+                brandAriaLabel: "SynoSync ホーム",
+                navFeatures: "主な機能",
+                navStory: "利用シーン",
+                navDownload: "ダウンロード",
+                eyebrow: "Synology NAS と iOS ファイルワークフローのために再設計",
+                heroTitle: "Synology 同期を、あなたが実際に使うファイルアプリへ。",
+                heroLead: "SynoSync は、Synology Drive ではローカル同期先を他の App が使えるディレクトリに設定しづらい問題を解決します。NAS フォルダをユーザーが許可した任意の場所へ同期できるため、Obsidian、文書エディタ、リーダー系アプリなどのファイルベース App が同じファイル群を直接扱えます。",
+                heroPrimaryCta: "App Store で見る",
+                heroSecondaryCta: "主な機能を見る",
+                metaOneTitle: "任意の許可済みフォルダ",
+                metaOneBody: "公式クライアントのサンドボックスに閉じ込められず、「ファイル」App から見える場所へ同期できます。",
+                metaTwoTitle: "3 つの同期方向",
+                metaTwoBody: "NAS → ローカル、ローカル → NAS、双方向同期に対応します。",
+                metaThreeTitle: "前景とバックグラウンド",
+                metaThreeBody: "長時間同期を手動で実行することも、iOS のバックグラウンドタスクに任せることもできます。",
+                heroPanelAriaLabel: "同期フロープレビュー",
+                flowOneTitle: "Synology NAS",
+                flowOneBody: "共有フォルダを選択し、DSM / FileStation の機能で同期ジョブを作成します。",
+                flowTwoBody: "フォルダ権限を保持し、変更を検出し、競合ポリシーを適用して同期を実行します。",
+                flowThreeTitle: "あなたのファイル系アプリ",
+                flowThreeBody: "Obsidian、Markdown エディタ、リーダー系アプリなど、ファイル中心のワークフローに役立ちます。",
+                pillOne: "Security-Scoped Bookmark",
+                pillTwo: "Background Sync",
+                pillThree: "Conflict Control",
+                featuresTitle: "公式の同期パス制限に縛られない主な機能。",
+                featuresLead: "SynoSync は単なる一般的なクラウドクライアントではありません。iOS のファイルワークフローに欠けていた接続レイヤーを補い、Synology をより多くのプロ向け App の同期基盤にします。",
+                featureOneTitle: "任意の許可済みフォルダへ同期",
+                featureOneBody: "システムのファイルピッカーでローカルフォルダを選び、その権限を保持して安定した再同期を行えます。",
+                featureTwoTitle: "ファイルライブラリアプリ向け",
+                featureTwoBody: "Obsidian のような App に、余分なインポート / エクスポートなしで自然な NAS 同期を提供します。",
+                featureThreeTitle: "柔軟な同期ポリシー",
+                featureThreeBody: "NAS → ローカル、ローカル → NAS、双方向同期に加え、新しい方を残す・ローカル優先・リモート優先・両方保持を選べます。",
+                featureFourTitle: "手動同期と自動同期",
+                featureFourBody: "前景で長時間同期を開始することも、条件が整ったときに iOS にバックグラウンド実行させることもできます。",
+                storyQuote: "「別の閉じた App に同期するのではなく、いま使っている生産性ファイルフローへ Synology をつなぐ。」",
+                storyBody: "ノート保管庫、研究資料、Markdown リポジトリ、プロジェクト文書を Synology に保存しているなら、本当に必要なのはコピーをダウンロードすることではありません。すでに使っている App から同じファイルを直接使えることです。",
+                statOneTitle: "iPhone / iPad",
+                statOneBody: "iOS のファイル権限モデルに沿って設計されており、非標準の回避策に依存しません。",
+                statTwoTitle: "DSM 6 / 7",
+                statTwoBody: "Synology のファイル同期シナリオに特化し、安定したディレクトリ対応付けと実行に集中しています。",
+                workflowOneTitle: "Synology に接続",
+                workflowOneBody: "DSM にサインインし、共有フォルダを閲覧して、同期したいリモートフォルダを選びます。",
+                workflowTwoTitle: "ローカル保存先を選択",
+                workflowTwoBody: "「ファイル」App に見えるフォルダ、たとえばノート App の保管庫などを選択します。",
+                workflowThreeTitle: "自分のペースで同期",
+                workflowThreeBody: "すぐに手動同期することも、設定した条件でシステムに自動実行させることもできます。",
+                storyNote: "SynoSync は iOS サンドボックスを回避しません。ユーザーが明示的に許可したフォルダアクセスを利用するため、長期的で安定した、コンプライアンスに沿った運用に向いています。",
+                downloadTitle: "Synology 同期を、本当に使える iOS ファイル環境へ。",
+                downloadLead: "App Store で SynoSync を開いて、NAS フォルダをあなたが実際に使う iOS ディレクトリへ同期しましょう。",
+                downloadPrimaryCta: "App Store で見る",
+                downloadSecondaryCta: "ページ上部へ戻る",
+                footerTagline: "Synology フォルダを、あなたが実際に使う App のワークフローへ。"
+            },
+            ko: {
+                pageTitle: "SynoSync | Synology 동기화를 iPhone 파일 워크플로우로",
+                pageDescription: "SynoSync는 Synology NAS 폴더를 iPhone과 iPad의 사용자 승인 디렉터리로 동기화하여 Obsidian 같은 파일 기반 앱이 같은 파일을 직접 사용할 수 있게 합니다.",
+                brandAriaLabel: "SynoSync 홈",
+                navFeatures: "핵심 기능",
+                navStory: "사용 장면",
+                navDownload: "다운로드",
+                eyebrow: "Synology NAS와 iOS 파일 워크플로우를 위해 다시 설계",
+                heroTitle: "Synology 동기화를, 실제로 쓰는 파일 앱으로.",
+                heroLead: "SynoSync는 Synology Drive가 로컬 동기화 대상을 다른 앱이 쓸 수 있는 디렉터리로 지정하기 어려운 문제를 해결합니다. NAS 폴더를 사용자가 허용한 위치로 동기화해 Obsidian, 문서 편집기, 리더 앱 등 파일 기반 앱이 같은 파일을 직접 사용할 수 있습니다.",
+                heroPrimaryCta: "App Store에서 보기",
+                heroSecondaryCta: "핵심 기능 보기",
+                metaOneTitle: "임의의 승인 폴더",
+                metaOneBody: "공식 클라이언트 샌드박스에 갇히지 않고 파일 앱에서 보이는 위치로 동기화합니다.",
+                metaTwoTitle: "세 가지 동기화 방향",
+                metaTwoBody: "NAS → 로컬, 로컬 → NAS, 양방향 동기화를 지원합니다.",
+                metaThreeTitle: "전면 + 백그라운드",
+                metaThreeBody: "장시간 동기화를 직접 실행하거나 iOS가 백그라운드 작업을 예약하도록 둘 수 있습니다.",
+                heroPanelAriaLabel: "동기화 흐름 미리보기",
+                flowOneTitle: "Synology NAS",
+                flowOneBody: "공유 폴더를 선택하고 DSM / FileStation 기능으로 동기화 작업을 만듭니다.",
+                flowTwoBody: "폴더 권한을 유지하고 변경을 감지하며 충돌 규칙을 적용해 동기화를 실행합니다.",
+                flowThreeTitle: "내 파일 기반 앱",
+                flowThreeBody: "Obsidian, Markdown 편집기, 리더 앱 등 파일 중심 워크플로우에 잘 맞습니다.",
+                pillOne: "Security-Scoped Bookmark",
+                pillTwo: "Background Sync",
+                pillThree: "Conflict Control",
+                featuresTitle: "공식 동기화 경로 제한에 묶이지 않는 핵심 기능.",
+                featuresLead: "SynoSync는 또 하나의 일반 클라우드 클라이언트가 아닙니다. iOS 파일 워크플로우에 빠져 있던 연결 레이어를 채워 Synology를 더 많은 전문 앱의 동기화 기반으로 만듭니다.",
+                featureOneTitle: "임의의 승인 폴더로 동기화",
+                featureOneBody: "시스템 파일 선택기로 로컬 폴더를 고르고 권한을 유지해 안정적으로 다시 동기화합니다.",
+                featureTwoTitle: "파일 라이브러리 앱에 최적화",
+                featureTwoBody: "Obsidian 같은 앱에 추가 가져오기/내보내기 없이 더 자연스러운 NAS 동기화 흐름을 제공합니다.",
+                featureThreeTitle: "유연한 동기화 정책",
+                featureThreeBody: "NAS → 로컬, 로컬 → NAS, 양방향 동기화와 함께 최신 유지, 로컬 우선, 원격 우선, 둘 다 유지 충돌 정책을 지원합니다.",
+                featureFourTitle: "수동 + 자동 동기화",
+                featureFourBody: "전면 장시간 동기화를 직접 시작하거나 조건이 맞을 때 iOS가 백그라운드 작업을 실행하게 할 수 있습니다.",
+                storyQuote: "\"파일을 또 다른 닫힌 앱으로 보내는 대신, 이미 쓰는 생산성 파일 흐름에 Synology를 연결하세요.\"",
+                storyBody: "노트 보관함, 연구 자료, Markdown 저장소, 프로젝트 문서를 Synology에 두고 있다면 필요한 것은 복사본 다운로드가 아니라 이미 쓰는 앱이 같은 파일을 직접 다루는 것입니다.",
+                statOneTitle: "iPhone / iPad",
+                statOneBody: "비표준 우회 방식 없이 iOS 파일 권한 모델에 맞춰 설계했습니다.",
+                statTwoTitle: "DSM 6 / 7",
+                statTwoBody: "Synology 파일 동기화 시나리오에 집중해 안정적인 디렉터리 매핑과 실행을 제공합니다.",
+                workflowOneTitle: "Synology 연결",
+                workflowOneBody: "DSM에 로그인하고 공유 폴더를 둘러본 뒤 동기화할 원격 폴더를 선택합니다.",
+                workflowTwoTitle: "로컬 대상 선택",
+                workflowTwoBody: "파일 앱에서 보이는 대상 폴더를 선택하세요. 예를 들면 노트 앱이 쓰는 라이브러리입니다.",
+                workflowThreeTitle: "원하는 방식으로 동기화",
+                workflowThreeBody: "바로 수동 동기화를 실행하거나 설정한 조건에 따라 시스템이 자동으로 실행하게 할 수 있습니다.",
+                storyNote: "SynoSync는 iOS 샌드박스를 우회하지 않습니다. 사용자가 명시적으로 허용한 폴더 접근만 사용하므로 장기적이고 안정적이며 규정을 지키는 워크플로우에 적합합니다.",
+                downloadTitle: "Synology 동기화를 진짜 쓸 만한 iOS 파일 생태계로 가져오세요.",
+                downloadLead: "App Store에서 SynoSync를 열고 NAS 폴더를 실제로 사용하는 iOS 디렉터리로 동기화하세요.",
+                downloadPrimaryCta: "App Store에서 보기",
+                downloadSecondaryCta: "맨 위로",
+                footerTagline: "Synology 폴더를, 실제로 쓰는 앱 워크플로우로."
+            },
+            fr: {
+                pageTitle: "SynoSync | Faites entrer la synchro Synology dans votre workflow iPhone",
+                pageDescription: "SynoSync synchronise les dossiers Synology NAS vers tout dossier autorisé sur iPhone et iPad, afin qu'Obsidian et les autres apps basées sur des fichiers utilisent directement vos données.",
+                brandAriaLabel: "Accueil SynoSync",
+                navFeatures: "Fonctions clés",
+                navStory: "Cas d'usage",
+                navDownload: "Télécharger",
+                eyebrow: "Repensé pour Synology NAS et les workflows de fichiers iOS",
+                heroTitle: "Faites entrer la synchro Synology dans les apps de fichiers que vous utilisez vraiment.",
+                heroLead: "SynoSync résout le problème de Synology Drive, qui garde les dossiers synchronisés dans son propre sandbox. Vous pouvez synchroniser vos dossiers NAS vers n'importe quel emplacement autorisé, afin qu'Obsidian, les éditeurs de documents, les lecteurs et d'autres apps basées sur des fichiers utilisent directement les mêmes contenus.",
+                heroPrimaryCta: "Voir sur l'App Store",
+                heroSecondaryCta: "Voir les fonctions",
+                metaOneTitle: "Tout dossier autorisé",
+                metaOneBody: "Synchronisez vers les emplacements visibles dans Fichiers au lieu de rester enfermés dans le sandbox du client officiel.",
+                metaTwoTitle: "Trois directions de synchro",
+                metaTwoBody: "NAS vers local, local vers NAS et synchronisation bidirectionnelle.",
+                metaThreeTitle: "Avant-plan + arrière-plan",
+                metaThreeBody: "Lancez une longue synchro manuellement ou laissez iOS exécuter des tâches en arrière-plan.",
+                heroPanelAriaLabel: "Aperçu du flux de synchronisation",
+                flowOneTitle: "Synology NAS",
+                flowOneBody: "Choisissez un dossier partagé et créez un flux de synchronisation avec DSM / FileStation.",
+                flowTwoBody: "Conserve les autorisations du dossier, détecte les changements, applique les règles de conflit et exécute la synchro.",
+                flowThreeTitle: "Vos apps orientées fichiers",
+                flowThreeBody: "Obsidian, les éditeurs Markdown, les lecteurs et les autres workflows basés sur des fichiers en profitent directement.",
+                pillOne: "Security-Scoped Bookmark",
+                pillTwo: "Background Sync",
+                pillThree: "Conflict Control",
+                featuresTitle: "Les fonctions clés, sans les limites du chemin de synchro officiel.",
+                featuresLead: "SynoSync n'est pas un client cloud générique de plus. Il ajoute le maillon manquant du workflow de fichiers iOS pour faire de Synology la couche de synchronisation derrière davantage d'apps professionnelles.",
+                featureOneTitle: "Synchroniser vers tout dossier autorisé",
+                featureOneBody: "Choisissez un dossier local avec le sélecteur de fichiers système et conservez cet accès pour les synchronisations futures.",
+                featureTwoTitle: "Pensé pour les apps à bibliothèque de fichiers",
+                featureTwoBody: "Offrez aux apps comme Obsidian une synchro NAS naturelle, sans import ni export supplémentaire.",
+                featureThreeTitle: "Politiques de synchro flexibles",
+                featureThreeBody: "Choisissez NAS vers local, local vers NAS ou bidirectionnel avec conservation du plus récent, du local, du distant ou des deux.",
+                featureFourTitle: "Synchro manuelle et automatique",
+                featureFourBody: "Lancez vous-même une longue synchro au premier plan ou laissez iOS démarrer des tâches en arrière-plan au bon moment.",
+                storyQuote: "\"Au lieu de synchroniser vos fichiers dans une autre app fermée, connectez Synology au flux de fichiers productif que vous utilisez déjà.\"",
+                storyBody: "Si vous gardez vos coffres de notes, vos archives de recherche, vos dépôts Markdown ou vos documents de projet sur Synology, le vrai besoin n'est généralement pas de télécharger une copie. C'est de laisser vos apps existantes travailler directement avec ces mêmes fichiers.",
+                statOneTitle: "iPhone / iPad",
+                statOneBody: "Conçu autour du modèle d'autorisation de fichiers iOS, sans contournement non pris en charge.",
+                statTwoTitle: "DSM 6 / 7",
+                statTwoBody: "Axé sur les scénarios de synchronisation de fichiers Synology, avec un mappage de dossiers stable et fiable.",
+                workflowOneTitle: "Connectez votre Synology",
+                workflowOneBody: "Connectez-vous à DSM, parcourez vos dossiers partagés et choisissez le dossier distant à synchroniser.",
+                workflowTwoTitle: "Choisissez la destination locale",
+                workflowTwoBody: "Sélectionnez un dossier visible dans Fichiers, par exemple la bibliothèque utilisée par votre app de notes.",
+                workflowThreeTitle: "Synchronisez à votre rythme",
+                workflowThreeBody: "Lancez une synchronisation immédiatement ou laissez le système l'exécuter automatiquement selon vos conditions.",
+                storyNote: "SynoSync ne contourne pas le sandbox iOS. Il s'appuie sur un accès explicitement autorisé par l'utilisateur, ce qui convient à un workflow durable, stable et conforme.",
+                downloadTitle: "Prêt à faire entrer la synchro Synology dans un véritable écosystème de fichiers iOS ?",
+                downloadLead: "Ouvrez SynoSync dans l'App Store et commencez à synchroniser vos dossiers NAS vers les répertoires iOS que vous utilisez vraiment.",
+                downloadPrimaryCta: "Voir sur l'App Store",
+                downloadSecondaryCta: "Retour en haut",
+                footerTagline: "Faites entrer les dossiers Synology dans le workflow d'apps que vous utilisez vraiment."
+            },
+            de: {
+                pageTitle: "SynoSync | Bringen Sie Synology-Sync in Ihren iPhone-Dateiworkflow",
+                pageDescription: "SynoSync synchronisiert Synology-NAS-Ordner in beliebige freigegebene Verzeichnisse auf iPhone und iPad, damit Obsidian und andere dateibasierte Apps direkt mit Ihren Dateien arbeiten können.",
+                brandAriaLabel: "SynoSync Startseite",
+                navFeatures: "Kernfunktionen",
+                navStory: "Einsatzszenarien",
+                navDownload: "Download",
+                eyebrow: "Neu gedacht für Synology NAS und iOS-Dateiworkflows",
+                heroTitle: "Bringen Sie Synology-Sync in die Datei-Apps, die Sie wirklich nutzen.",
+                heroLead: "SynoSync löst das Problem, dass Synology Drive lokale Sync-Ziele im eigenen Sandbox-Bereich hält. Sie können NAS-Ordner in jedes von Ihnen freigegebene Verzeichnis synchronisieren, damit Obsidian, Dokumenteditoren, Reader und andere dateibasierte Apps direkt mit denselben Dateien arbeiten.",
+                heroPrimaryCta: "Im App Store ansehen",
+                heroSecondaryCta: "Funktionen ansehen",
+                metaOneTitle: "Beliebiger freigegebener Ordner",
+                metaOneBody: "Synchronisieren Sie an Orte, die in Dateien sichtbar sind, statt im Sandbox-Bereich des offiziellen Clients zu bleiben.",
+                metaTwoTitle: "Drei Synchronisationsrichtungen",
+                metaTwoBody: "NAS zu lokal, lokal zu NAS und flexible Zwei-Wege-Synchronisation.",
+                metaThreeTitle: "Vordergrund + Hintergrund",
+                metaThreeBody: "Starten Sie lange Synchronisationen manuell oder lassen Sie iOS Hintergrundaufgaben planen.",
+                heroPanelAriaLabel: "Vorschau des Synchronisationsablaufs",
+                flowOneTitle: "Synology NAS",
+                flowOneBody: "Wählen Sie einen freigegebenen Ordner und erstellen Sie Sync-Jobs direkt mit DSM / FileStation.",
+                flowTwoBody: "Speichert Ordnerberechtigungen, erkennt Änderungen, wendet Konfliktregeln an und führt die Synchronisation aus.",
+                flowThreeTitle: "Ihre dateibasierten Apps",
+                flowThreeBody: "Obsidian, Markdown-Editoren, Reader und andere dateizentrierte Workflows profitieren direkt davon.",
+                pillOne: "Security-Scoped Bookmark",
+                pillTwo: "Background Sync",
+                pillThree: "Conflict Control",
+                featuresTitle: "Kernfunktionen ohne die offiziellen Pfadbeschränkungen.",
+                featuresLead: "SynoSync ist kein weiterer generischer Cloud-Client. Es ergänzt die fehlende Verbindung im iOS-Dateiworkflow, damit Synology die Synchronisationsschicht für mehr professionelle Apps werden kann.",
+                featureOneTitle: "In jeden freigegebenen Ordner synchronisieren",
+                featureOneBody: "Wählen Sie einen lokalen Ordner über den System-Dateidialog und behalten Sie diesen Zugriff für zuverlässige spätere Synchronisationen.",
+                featureTwoTitle: "Für Datei-Bibliotheks-Apps gebaut",
+                featureTwoBody: "Geben Sie Apps wie Obsidian einen natürlicheren NAS-Workflow ohne zusätzliche Import- und Export-Schritte.",
+                featureThreeTitle: "Flexible Sync-Richtlinien",
+                featureThreeBody: "Wählen Sie NAS zu lokal, lokal zu NAS oder bidirektional mit Konfliktstrategien wie neuer, lokal, remote oder beide behalten.",
+                featureFourTitle: "Manuelle und automatische Synchronisation",
+                featureFourBody: "Starten Sie selbst eine lange Vordergrund-Synchronisation oder lassen Sie iOS Hintergrundaufgaben unter passenden Bedingungen ausführen.",
+                storyQuote: "\"Statt Dateien in eine weitere geschlossene App zu synchronisieren, verbinden Sie Synology mit dem produktiven Datei-Workflow, den Sie bereits nutzen.\"",
+                storyBody: "Wenn Sie Notizarchive, Forschungsunterlagen, Markdown-Repositories oder Projektdokumente auf Synology speichern, brauchen Sie meist keine heruntergeladene Kopie. Sie brauchen direkten Zugriff derselben Apps auf dieselben Dateien.",
+                statOneTitle: "iPhone / iPad",
+                statOneBody: "Entwickelt rund um das iOS-Dateiberechtigungsmodell, ohne nicht unterstützte Umgehungen.",
+                statTwoTitle: "DSM 6 / 7",
+                statTwoBody: "Fokussiert auf Synology-Dateisynchronisation mit stabiler Ordnerzuordnung und zuverlässiger Ausführung.",
+                workflowOneTitle: "Synology verbinden",
+                workflowOneBody: "Melden Sie sich bei DSM an, durchsuchen Sie freigegebene Ordner und wählen Sie den Remote-Ordner, den Sie synchronisieren möchten.",
+                workflowTwoTitle: "Lokales Ziel wählen",
+                workflowTwoBody: "Wählen Sie einen Zielordner, der in Dateien sichtbar ist, etwa die Bibliothek Ihrer Notiz-App.",
+                workflowThreeTitle: "Synchronisieren Sie in Ihrem Rhythmus",
+                workflowThreeBody: "Führen Sie die Synchronisation sofort aus oder lassen Sie das System sie unter Ihren Bedingungen automatisch starten.",
+                storyNote: "SynoSync umgeht die iOS-Sandbox nicht. Es nutzt ausdrücklich freigegebenen Ordnerzugriff und eignet sich deshalb für langfristige, stabile und regelkonforme Datei-Workflows.",
+                downloadTitle: "Bereit, Synology-Sync in ein wirklich nutzbares iOS-Datei-Ökosystem zu bringen?",
+                downloadLead: "Öffnen Sie SynoSync im App Store und synchronisieren Sie NAS-Ordner in die iOS-Verzeichnisse, mit denen Sie tatsächlich arbeiten.",
+                downloadPrimaryCta: "Im App Store ansehen",
+                downloadSecondaryCta: "Nach oben",
+                footerTagline: "Bringen Sie Synology-Ordner in den App-Workflow, den Sie wirklich nutzen."
+            },
+            ru: {
+                pageTitle: "SynoSync | Перенесите синхронизацию Synology в файловый workflow iPhone",
+                pageDescription: "SynoSync синхронизирует папки Synology NAS с любыми разрешенными каталогами на iPhone и iPad, чтобы Obsidian и другие файловые приложения работали с вашими файлами напрямую.",
+                brandAriaLabel: "Главная SynoSync",
+                navFeatures: "Возможности",
+                navStory: "Сценарии",
+                navDownload: "Скачать",
+                eyebrow: "Переосмыслено для Synology NAS и файловых workflow на iOS",
+                heroTitle: "Добавьте синхронизацию Synology в файловые приложения, которыми вы реально пользуетесь.",
+                heroLead: "SynoSync решает проблему, при которой Synology Drive держит локальные цели синхронизации внутри собственной песочницы. Вы можете синхронизировать папки NAS в любой каталог, который разрешил пользователь, чтобы Obsidian, редакторы документов, ридеры и другие файловые приложения работали с теми же файлами напрямую.",
+                heroPrimaryCta: "Открыть в App Store",
+                heroSecondaryCta: "Посмотреть возможности",
+                metaOneTitle: "Любая разрешенная папка",
+                metaOneBody: "Синхронизация в папки, видимые в приложении «Файлы», а не только внутри песочницы официального клиента.",
+                metaTwoTitle: "Три направления синхронизации",
+                metaTwoBody: "NAS → локально, локально → NAS и двусторонняя синхронизация.",
+                metaThreeTitle: "Передний план + фон",
+                metaThreeBody: "Запускайте долгую синхронизацию вручную или поручайте iOS фоновые задачи по расписанию.",
+                heroPanelAriaLabel: "Предпросмотр потока синхронизации",
+                flowOneTitle: "Synology NAS",
+                flowOneBody: "Выберите общую папку и создайте задачу синхронизации через возможности DSM / FileStation.",
+                flowTwoBody: "Сохраняет доступ к папкам, отслеживает изменения, применяет правила конфликтов и выполняет синхронизацию.",
+                flowThreeTitle: "Ваши файловые приложения",
+                flowThreeBody: "Obsidian, Markdown-редакторы, ридеры и любые workflow, построенные вокруг файлов, получают прямую пользу.",
+                pillOne: "Security-Scoped Bookmark",
+                pillTwo: "Background Sync",
+                pillThree: "Conflict Control",
+                featuresTitle: "Ключевые возможности без ограничений официального пути синхронизации.",
+                featuresLead: "SynoSync — не очередной обычный облачный клиент. Он закрывает недостающее звено в файловом workflow iOS и делает Synology базовым слоем синхронизации для более профессиональных приложений.",
+                featureOneTitle: "Синхронизация в любую разрешенную папку",
+                featureOneBody: "Выберите локальную папку через системный файловый диалог и сохраните это разрешение для надежных последующих синхронизаций.",
+                featureTwoTitle: "Подходит для приложений с файловой библиотекой",
+                featureTwoBody: "Дает приложениям вроде Obsidian естественный NAS-workflow без лишних импортов и экспортов.",
+                featureThreeTitle: "Гибкие политики синхронизации",
+                featureThreeBody: "Выбирайте NAS → локально, локально → NAS или двусторонний режим с правилами конфликтов: оставить новое, локальное, удаленное или оба варианта.",
+                featureFourTitle: "Ручная и автоматическая синхронизация",
+                featureFourBody: "Запускайте долгую синхронизацию на переднем плане сами или позволяйте iOS стартовать фоновые задачи в подходящих условиях.",
+                storyQuote: "«Не синхронизировать файлы в еще одно закрытое приложение, а подключить Synology к тому файловому workflow, которым вы уже пользуетесь.»",
+                storyBody: "Если вы храните на Synology заметки, исследовательские материалы, Markdown-репозитории или проектные документы, обычно вам нужна не еще одна копия. Вам нужно, чтобы существующие приложения работали с этими же файлами напрямую.",
+                statOneTitle: "iPhone / iPad",
+                statOneBody: "Создано вокруг модели авторизации файлов iOS без нестандартных обходов.",
+                statTwoTitle: "DSM 6 / 7",
+                statTwoBody: "Сфокусировано на сценариях синхронизации файлов Synology со стабильным сопоставлением каталогов и надежным выполнением.",
+                workflowOneTitle: "Подключите Synology",
+                workflowOneBody: "Войдите в DSM, просмотрите общие папки и выберите удаленную папку для синхронизации.",
+                workflowTwoTitle: "Выберите локальное назначение",
+                workflowTwoBody: "Укажите целевую папку, видимую в приложении «Файлы», например библиотеку вашего приложения для заметок.",
+                workflowThreeTitle: "Синхронизируйте в своем ритме",
+                workflowThreeBody: "Запустите синхронизацию сразу или позвольте системе выполнять ее автоматически по вашим условиям.",
+                storyNote: "SynoSync не обходит песочницу iOS. Он опирается на явно разрешенный пользователем доступ к папкам, поэтому подходит для долгосрочных, стабильных и корректных файловых workflow.",
+                downloadTitle: "Готовы перенести синхронизацию Synology в действительно удобную файловую экосистему iOS?",
+                downloadLead: "Откройте SynoSync в App Store и начните синхронизировать папки NAS в те каталоги iOS, с которыми вы действительно работаете.",
+                downloadPrimaryCta: "Открыть в App Store",
+                downloadSecondaryCta: "Наверх",
+                footerTagline: "Перенесите папки Synology в тот workflow приложений, которым вы реально пользуетесь."
+            }
+        };
+
+        const languageMap = {
+            zh: "zh-CN",
+            "zh-cn": "zh-CN",
+            "zh-hans": "zh-CN",
+            en: "en",
+            ja: "ja",
+            jp: "ja",
+            ko: "ko",
+            "ko-kr": "ko",
+            fr: "fr",
+            de: "de",
+            ru: "ru"
+        };
+
+        function detectLocale() {
+            const candidates = [...(navigator.languages || []), navigator.language]
+                .filter(Boolean)
+                .map((value) => value.toLowerCase());
+
+            for (const candidate of candidates) {
+                if (languageMap[candidate]) {
+                    return languageMap[candidate];
+                }
+
+                const baseLanguage = candidate.split("-")[0];
+                if (baseLanguage === "zh") {
+                    return candidate === "zh" ? "zh-CN" : "en";
+                }
+                if (languageMap[baseLanguage]) {
+                    return languageMap[baseLanguage];
+                }
+            }
+
+            return "en";
+        }
+
+        function applyTranslations(locale) {
+            const resolvedLocale = translations[locale] ? locale : "en";
+            const copy = translations[resolvedLocale];
+
+            document.documentElement.lang = resolvedLocale;
+            document.title = copy.pageTitle;
+
+            const description = document.querySelector('meta[name="description"]');
+            if (description) {
+                description.setAttribute("content", copy.pageDescription);
+            }
+
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.dataset.i18n;
+                if (copy[key]) {
+                    element.textContent = copy[key];
+                }
+            });
+
+            document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+                const key = element.dataset.i18nAriaLabel;
+                if (copy[key]) {
+                    element.setAttribute("aria-label", copy[key]);
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("year").textContent = new Date().getFullYear();
+            applyTranslations(detectLocale());
+        });
     </script>
 </body>
 </html>
