@@ -133,6 +133,45 @@
             font-size: 14px;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-left: auto;
+        }
+
+        .language-switcher {
+            min-height: 42px;
+            padding: 0 16px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.72);
+            color: var(--text);
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .language-switcher:focus-visible {
+            outline: 2px solid rgba(15, 124, 109, 0.32);
+            outline-offset: 2px;
+        }
+
+        .language-switcher-field {
+            display: inline-flex;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         .hero {
             display: grid;
             grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
@@ -437,6 +476,17 @@
             gap: 14px;
         }
 
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .privacy-card h3 {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
         .workflow-step {
             display: grid;
             grid-template-columns: 54px minmax(0, 1fr);
@@ -526,7 +576,8 @@
         @media (max-width: 1040px) {
             .hero,
             .story-grid,
-            .cta-card {
+            .cta-card,
+            .privacy-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -547,10 +598,16 @@
             .nav {
                 border-radius: 28px;
                 padding: 16px;
+                flex-wrap: wrap;
             }
 
             .nav-links {
                 display: none;
+            }
+
+            .nav-actions {
+                width: 100%;
+                justify-content: flex-end;
             }
 
             .hero-copy,
@@ -593,10 +650,25 @@
                         <span class="brand-mark">S</span>
                         <span>SynoSync</span>
                     </a>
-                    <div class="nav-links">
-                        <a href="#features" data-i18n="navFeatures"></a>
-                        <a href="#story" data-i18n="navStory"></a>
-                        <a href="#download" data-i18n="navDownload"></a>
+                    <div class="nav-actions">
+                        <div class="nav-links">
+                            <a href="#features" data-i18n="navFeatures"></a>
+                            <a href="#story" data-i18n="navStory"></a>
+                            <a href="#privacy" data-i18n="navPrivacy"></a>
+                            <a href="#download" data-i18n="navDownload"></a>
+                        </div>
+                        <div class="language-switcher-field">
+                            <label id="language-switcher-label" class="visually-hidden" for="language-switcher" data-i18n="languageSwitcherLabel"></label>
+                            <select id="language-switcher" class="language-switcher" aria-label="Switch language" data-i18n-aria-label="languageSwitcherLabel">
+                                <option value="zh-CN">简体中文</option>
+                                <option value="en">English</option>
+                                <option value="ja">日本語</option>
+                                <option value="ko">한국어</option>
+                                <option value="fr">Français</option>
+                                <option value="de">Deutsch</option>
+                                <option value="ru">Русский</option>
+                            </select>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -733,6 +805,25 @@
                 </div>
             </section>
 
+            <section class="section" id="privacy">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 data-i18n="privacyTitle"></h2>
+                        <p data-i18n="privacyLead"></p>
+                    </div>
+                    <div class="privacy-grid">
+                        <article class="section-card privacy-card">
+                            <h3 data-i18n="privacyStatementTitle"></h3>
+                            <p data-i18n="privacyStatementBody"></p>
+                        </article>
+                        <article class="section-card privacy-card">
+                            <h3 data-i18n="privacyStorageTitle"></h3>
+                            <p data-i18n="privacyStorageBody"></p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
             <section class="section" id="download">
                 <div class="container">
                     <div class="cta-card">
@@ -765,7 +856,9 @@
                 brandAriaLabel: "SynoSync 首页",
                 navFeatures: "核心能力",
                 navStory: "适用场景",
+                navPrivacy: "隐私政策",
                 navDownload: "下载",
+                languageSwitcherLabel: "切换语言",
                 eyebrow: "为群晖 NAS 与 iOS 文件工作流重新设计",
                 heroTitle: "让群晖同步，真正进入你的文件库生态。",
                 heroLead: "SynoSync 解决了群晖官方 Drive 应用无法把本地同步目标设置到其他 App 可用目录的问题。你可以把 NAS 文件夹同步到用户授权的任意位置，让 Obsidian、文档编辑器、阅读器等依赖文件库的 App 获得更灵活的同步基础。",
@@ -809,6 +902,12 @@
                 workflowThreeTitle: "按照你的节奏同步",
                 workflowThreeBody: "可以立即手动同步，也可以让系统按设定条件自动执行，保持文件库持续更新。",
                 storyNote: "SynoSync 不绕过 iOS 沙盒。它依赖的是用户明确授权的目录访问机制，因此适合长期、稳定、合规地接入你的文件工作流。",
+                privacyTitle: "隐私政策：当前版本不收集任何用户数据。",
+                privacyLead: "你在网站上看到的声明适用于当前 SynoSync App：目前不会收集、上传、分析或出售任何用户数据。",
+                privacyStatementTitle: "不收集个人数据",
+                privacyStatementBody: "当前版本的 SynoSync 不会收集你的身份信息、使用行为、文件内容、设备信息或分析数据，也不会把这些数据上传到开发者服务器。",
+                privacyStorageTitle: "同步所需信息仅在你的设备与 NAS 之间处理",
+                privacyStorageBody: "你授权的目录、同步配置与连接信息仅用于完成你发起的同步流程，不会被 SynoSync 额外汇总、追踪或分享给第三方。",
                 downloadTitle: "准备把群晖同步带进真正可用的 iOS 文件生态。",
                 downloadLead: "现在已经可以直接跳转到 App Store。打开 SynoSync，把 NAS 文件夹同步到你真正会使用的 iOS 目录里。",
                 downloadPrimaryCta: "前往 App Store",
@@ -821,7 +920,9 @@
                 brandAriaLabel: "SynoSync home",
                 navFeatures: "Core Features",
                 navStory: "Use Cases",
+                navPrivacy: "Privacy",
                 navDownload: "Download",
+                languageSwitcherLabel: "Switch language",
                 eyebrow: "Redesigned for Synology NAS and iOS file workflows",
                 heroTitle: "Bring Synology sync into the file apps you actually use.",
                 heroLead: "SynoSync solves the problem of Synology Drive keeping local sync targets inside its own sandbox. You can sync NAS folders to any directory you authorize, so Obsidian, document editors, readers, and other file-based apps can work from the same files directly.",
@@ -865,6 +966,12 @@
                 workflowThreeTitle: "Sync on your schedule",
                 workflowThreeBody: "Run a sync immediately or let the system execute it automatically under your chosen conditions.",
                 storyNote: "SynoSync does not bypass the iOS sandbox. It relies on user-approved folder access, making it suitable for long-term, stable, compliant file workflows.",
+                privacyTitle: "Privacy policy: the current app does not collect any user data.",
+                privacyLead: "This statement applies to the current SynoSync app: it does not collect, upload, analyze, or sell any user data.",
+                privacyStatementTitle: "No personal data collection",
+                privacyStatementBody: "The current version of SynoSync does not collect your identity information, usage behavior, file contents, device information, or analytics data, and it does not upload any of that data to developer-operated servers.",
+                privacyStorageTitle: "Sync data stays between your device and NAS",
+                privacyStorageBody: "The folders you authorize, sync settings, and connection details are used only to complete the sync jobs you start, and are not additionally aggregated, tracked, or shared with third parties by SynoSync.",
                 downloadTitle: "Ready to bring Synology sync into a truly usable iOS file ecosystem?",
                 downloadLead: "Open SynoSync on the App Store and start syncing NAS folders into the iOS directories you actually work in.",
                 downloadPrimaryCta: "View on the App Store",
@@ -877,7 +984,9 @@
                 brandAriaLabel: "SynoSync ホーム",
                 navFeatures: "主な機能",
                 navStory: "利用シーン",
+                navPrivacy: "プライバシー",
                 navDownload: "ダウンロード",
+                languageSwitcherLabel: "言語を切り替える",
                 eyebrow: "Synology NAS と iOS ファイルワークフローのために再設計",
                 heroTitle: "Synology 同期を、あなたが実際に使うファイルアプリへ。",
                 heroLead: "SynoSync は、Synology Drive ではローカル同期先を他の App が使えるディレクトリに設定しづらい問題を解決します。NAS フォルダをユーザーが許可した任意の場所へ同期できるため、Obsidian、文書エディタ、リーダー系アプリなどのファイルベース App が同じファイル群を直接扱えます。",
@@ -921,6 +1030,12 @@
                 workflowThreeTitle: "自分のペースで同期",
                 workflowThreeBody: "すぐに手動同期することも、設定した条件でシステムに自動実行させることもできます。",
                 storyNote: "SynoSync は iOS サンドボックスを回避しません。ユーザーが明示的に許可したフォルダアクセスを利用するため、長期的で安定した、コンプライアンスに沿った運用に向いています。",
+                privacyTitle: "プライバシーポリシー：現在の App はユーザーデータを収集しません。",
+                privacyLead: "この表記は現在の SynoSync App に適用されます。現時点で、ユーザーデータの収集・アップロード・分析・販売は行いません。",
+                privacyStatementTitle: "個人データは収集しません",
+                privacyStatementBody: "現在の SynoSync は、個人を特定する情報、利用状況、ファイル内容、端末情報、分析データを収集せず、それらを開発者のサーバーへアップロードすることもありません。",
+                privacyStorageTitle: "同期に必要な情報は端末と NAS の間でのみ扱います",
+                privacyStorageBody: "許可したフォルダ、同期設定、接続情報は、あなたが開始した同期処理を完了するためだけに使われ、SynoSync によって追加で集計・追跡・第三者共有されることはありません。",
                 downloadTitle: "Synology 同期を、本当に使える iOS ファイル環境へ。",
                 downloadLead: "App Store で SynoSync を開いて、NAS フォルダをあなたが実際に使う iOS ディレクトリへ同期しましょう。",
                 downloadPrimaryCta: "App Store で見る",
@@ -933,7 +1048,9 @@
                 brandAriaLabel: "SynoSync 홈",
                 navFeatures: "핵심 기능",
                 navStory: "사용 장면",
+                navPrivacy: "개인정보",
                 navDownload: "다운로드",
+                languageSwitcherLabel: "언어 전환",
                 eyebrow: "Synology NAS와 iOS 파일 워크플로우를 위해 다시 설계",
                 heroTitle: "Synology 동기화를, 실제로 쓰는 파일 앱으로.",
                 heroLead: "SynoSync는 Synology Drive가 로컬 동기화 대상을 다른 앱이 쓸 수 있는 디렉터리로 지정하기 어려운 문제를 해결합니다. NAS 폴더를 사용자가 허용한 위치로 동기화해 Obsidian, 문서 편집기, 리더 앱 등 파일 기반 앱이 같은 파일을 직접 사용할 수 있습니다.",
@@ -977,6 +1094,12 @@
                 workflowThreeTitle: "원하는 방식으로 동기화",
                 workflowThreeBody: "바로 수동 동기화를 실행하거나 설정한 조건에 따라 시스템이 자동으로 실행하게 할 수 있습니다.",
                 storyNote: "SynoSync는 iOS 샌드박스를 우회하지 않습니다. 사용자가 명시적으로 허용한 폴더 접근만 사용하므로 장기적이고 안정적이며 규정을 지키는 워크플로우에 적합합니다.",
+                privacyTitle: "개인정보 처리방침: 현재 앱은 어떤 사용자 데이터도 수집하지 않습니다.",
+                privacyLead: "이 안내는 현재 SynoSync 앱에 적용됩니다. 현재 사용자 데이터를 수집, 업로드, 분석하거나 판매하지 않습니다.",
+                privacyStatementTitle: "개인 데이터 미수집",
+                privacyStatementBody: "현재 버전의 SynoSync는 신원 정보, 사용 행태, 파일 내용, 기기 정보, 분석 데이터를 수집하지 않으며, 이런 데이터를 개발자 서버로 업로드하지도 않습니다.",
+                privacyStorageTitle: "동기화 정보는 기기와 NAS 사이에서만 처리됩니다",
+                privacyStorageBody: "사용자가 허용한 폴더, 동기화 설정, 연결 정보는 사용자가 시작한 동기화 작업을 완료하는 데만 쓰이며, SynoSync가 이를 추가로 집계, 추적하거나 제3자와 공유하지 않습니다.",
                 downloadTitle: "Synology 동기화를 진짜 쓸 만한 iOS 파일 생태계로 가져오세요.",
                 downloadLead: "App Store에서 SynoSync를 열고 NAS 폴더를 실제로 사용하는 iOS 디렉터리로 동기화하세요.",
                 downloadPrimaryCta: "App Store에서 보기",
@@ -989,7 +1112,9 @@
                 brandAriaLabel: "Accueil SynoSync",
                 navFeatures: "Fonctions clés",
                 navStory: "Cas d'usage",
+                navPrivacy: "Confidentialité",
                 navDownload: "Télécharger",
+                languageSwitcherLabel: "Changer de langue",
                 eyebrow: "Repensé pour Synology NAS et les workflows de fichiers iOS",
                 heroTitle: "Faites entrer la synchro Synology dans les apps de fichiers que vous utilisez vraiment.",
                 heroLead: "SynoSync résout le problème de Synology Drive, qui garde les dossiers synchronisés dans son propre sandbox. Vous pouvez synchroniser vos dossiers NAS vers n'importe quel emplacement autorisé, afin qu'Obsidian, les éditeurs de documents, les lecteurs et d'autres apps basées sur des fichiers utilisent directement les mêmes contenus.",
@@ -1033,6 +1158,12 @@
                 workflowThreeTitle: "Synchronisez à votre rythme",
                 workflowThreeBody: "Lancez une synchronisation immédiatement ou laissez le système l'exécuter automatiquement selon vos conditions.",
                 storyNote: "SynoSync ne contourne pas le sandbox iOS. Il s'appuie sur un accès explicitement autorisé par l'utilisateur, ce qui convient à un workflow durable, stable et conforme.",
+                privacyTitle: "Politique de confidentialité : l'app actuelle ne collecte aucune donnée utilisateur.",
+                privacyLead: "Cette déclaration s'applique à la version actuelle de SynoSync : elle ne collecte, n'envoie, n'analyse ni ne revend aucune donnée utilisateur.",
+                privacyStatementTitle: "Aucune collecte de données personnelles",
+                privacyStatementBody: "La version actuelle de SynoSync ne collecte ni vos informations d'identité, ni votre usage, ni le contenu de vos fichiers, ni les informations de l'appareil, ni des données analytiques, et n'envoie rien de cela vers des serveurs opérés par le développeur.",
+                privacyStorageTitle: "Les données de synchro restent entre votre appareil et votre NAS",
+                privacyStorageBody: "Les dossiers autorisés, les réglages de synchronisation et les informations de connexion servent uniquement à exécuter les synchronisations que vous lancez, et ne sont pas agrégés, suivis ni partagés avec des tiers par SynoSync.",
                 downloadTitle: "Prêt à faire entrer la synchro Synology dans un véritable écosystème de fichiers iOS ?",
                 downloadLead: "Ouvrez SynoSync dans l'App Store et commencez à synchroniser vos dossiers NAS vers les répertoires iOS que vous utilisez vraiment.",
                 downloadPrimaryCta: "Voir sur l'App Store",
@@ -1045,7 +1176,9 @@
                 brandAriaLabel: "SynoSync Startseite",
                 navFeatures: "Kernfunktionen",
                 navStory: "Einsatzszenarien",
+                navPrivacy: "Datenschutz",
                 navDownload: "Download",
+                languageSwitcherLabel: "Sprache wechseln",
                 eyebrow: "Neu gedacht für Synology NAS und iOS-Dateiworkflows",
                 heroTitle: "Bringen Sie Synology-Sync in die Datei-Apps, die Sie wirklich nutzen.",
                 heroLead: "SynoSync löst das Problem, dass Synology Drive lokale Sync-Ziele im eigenen Sandbox-Bereich hält. Sie können NAS-Ordner in jedes von Ihnen freigegebene Verzeichnis synchronisieren, damit Obsidian, Dokumenteditoren, Reader und andere dateibasierte Apps direkt mit denselben Dateien arbeiten.",
@@ -1089,6 +1222,12 @@
                 workflowThreeTitle: "Synchronisieren Sie in Ihrem Rhythmus",
                 workflowThreeBody: "Führen Sie die Synchronisation sofort aus oder lassen Sie das System sie unter Ihren Bedingungen automatisch starten.",
                 storyNote: "SynoSync umgeht die iOS-Sandbox nicht. Es nutzt ausdrücklich freigegebenen Ordnerzugriff und eignet sich deshalb für langfristige, stabile und regelkonforme Datei-Workflows.",
+                privacyTitle: "Datenschutz: Die aktuelle App sammelt keine Nutzerdaten.",
+                privacyLead: "Diese Aussage gilt für die aktuelle SynoSync-App: Sie sammelt, überträgt, analysiert oder verkauft derzeit keine Nutzerdaten.",
+                privacyStatementTitle: "Keine Erfassung personenbezogener Daten",
+                privacyStatementBody: "Die aktuelle Version von SynoSync erfasst weder Identitätsdaten, Nutzungsverhalten, Dateiinhalte, Geräteinformationen noch Analysedaten und lädt keine dieser Daten auf vom Entwickler betriebene Server hoch.",
+                privacyStorageTitle: "Synchronisationsdaten bleiben zwischen Ihrem Gerät und dem NAS",
+                privacyStorageBody: "Freigegebene Ordner, Synchronisationseinstellungen und Verbindungsdaten werden nur verwendet, um die von Ihnen gestarteten Synchronisationsaufträge auszuführen, und von SynoSync nicht zusätzlich gesammelt, nachverfolgt oder an Dritte weitergegeben.",
                 downloadTitle: "Bereit, Synology-Sync in ein wirklich nutzbares iOS-Datei-Ökosystem zu bringen?",
                 downloadLead: "Öffnen Sie SynoSync im App Store und synchronisieren Sie NAS-Ordner in die iOS-Verzeichnisse, mit denen Sie tatsächlich arbeiten.",
                 downloadPrimaryCta: "Im App Store ansehen",
@@ -1101,7 +1240,9 @@
                 brandAriaLabel: "Главная SynoSync",
                 navFeatures: "Возможности",
                 navStory: "Сценарии",
+                navPrivacy: "Конфиденциальность",
                 navDownload: "Скачать",
+                languageSwitcherLabel: "Сменить язык",
                 eyebrow: "Переосмыслено для Synology NAS и файловых workflow на iOS",
                 heroTitle: "Добавьте синхронизацию Synology в файловые приложения, которыми вы реально пользуетесь.",
                 heroLead: "SynoSync решает проблему, при которой Synology Drive держит локальные цели синхронизации внутри собственной песочницы. Вы можете синхронизировать папки NAS в любой каталог, который разрешил пользователь, чтобы Obsidian, редакторы документов, ридеры и другие файловые приложения работали с теми же файлами напрямую.",
@@ -1145,6 +1286,12 @@
                 workflowThreeTitle: "Синхронизируйте в своем ритме",
                 workflowThreeBody: "Запустите синхронизацию сразу или позвольте системе выполнять ее автоматически по вашим условиям.",
                 storyNote: "SynoSync не обходит песочницу iOS. Он опирается на явно разрешенный пользователем доступ к папкам, поэтому подходит для долгосрочных, стабильных и корректных файловых workflow.",
+                privacyTitle: "Политика конфиденциальности: текущее приложение не собирает данные пользователей.",
+                privacyLead: "Это заявление относится к текущей версии SynoSync: она не собирает, не загружает, не анализирует и не продает данные пользователей.",
+                privacyStatementTitle: "Без сбора персональных данных",
+                privacyStatementBody: "Текущая версия SynoSync не собирает ваши идентификационные данные, сведения об использовании, содержимое файлов, информацию об устройстве или аналитические данные и не отправляет такие данные на серверы разработчика.",
+                privacyStorageTitle: "Данные синхронизации остаются между устройством и NAS",
+                privacyStorageBody: "Разрешенные вами папки, настройки синхронизации и данные подключения используются только для выполнения запущенных вами задач синхронизации и не агрегируются, не отслеживаются и не передаются третьим лицам со стороны SynoSync.",
                 downloadTitle: "Готовы перенести синхронизацию Synology в действительно удобную файловую экосистему iOS?",
                 downloadLead: "Откройте SynoSync в App Store и начните синхронизировать папки NAS в те каталоги iOS, с которыми вы действительно работаете.",
                 downloadPrimaryCta: "Открыть в App Store",
@@ -1152,6 +1299,8 @@
                 footerTagline: "Перенесите папки Synology в тот workflow приложений, которым вы реально пользуетесь."
             }
         };
+
+        const localeStorageKey = "synoSync.locale";
 
         const languageMap = {
             zh: "zh-CN",
@@ -1189,8 +1338,25 @@
             return "en";
         }
 
+        function getInitialLocale() {
+            try {
+                const savedLocale = window.localStorage.getItem(localeStorageKey);
+                if (savedLocale && translations[savedLocale]) {
+                    return savedLocale;
+                }
+            } catch (error) {
+                console.warn("SynoSync locale preference unavailable.", error);
+            }
+
+            return detectLocale();
+        }
+
+        function resolveLocale(locale) {
+            return translations[locale] ? locale : "en";
+        }
+
         function applyTranslations(locale) {
-            const resolvedLocale = translations[locale] ? locale : "en";
+            const resolvedLocale = resolveLocale(locale);
             const copy = translations[resolvedLocale];
 
             document.documentElement.lang = resolvedLocale;
@@ -1214,11 +1380,44 @@
                     element.setAttribute("aria-label", copy[key]);
                 }
             });
+
+        }
+
+        function persistLocalePreference(locale) {
+            try {
+                window.localStorage.setItem(localeStorageKey, locale);
+            } catch (error) {
+                console.warn("SynoSync locale preference unavailable.", error);
+            }
+        }
+
+        function syncLanguageSwitcher(locale) {
+            const languageSwitcher = document.getElementById("language-switcher");
+            if (!languageSwitcher) {
+                return;
+            }
+
+            const resolvedLocale = resolveLocale(locale);
+            if (languageSwitcher.value !== resolvedLocale) {
+                languageSwitcher.value = resolvedLocale;
+            }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("year").textContent = new Date().getFullYear();
-            applyTranslations(detectLocale());
+
+            const languageSwitcher = document.getElementById("language-switcher");
+            if (languageSwitcher) {
+                languageSwitcher.addEventListener("change", (event) => {
+                    const nextLocale = resolveLocale(event.target.value);
+                    applyTranslations(nextLocale);
+                    persistLocalePreference(nextLocale);
+                });
+            }
+
+            const initialLocale = getInitialLocale();
+            syncLanguageSwitcher(initialLocale);
+            applyTranslations(initialLocale);
         });
     </script>
 </body>
