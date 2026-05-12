@@ -1504,7 +1504,7 @@
         };
 
         const localeStorageKey = "synoSync.locale";
-        const rtlLocales = new Set(["ar"]);
+        const rightToLeftLocales = new Set(["ar"]);
 
         const languageMap = {
             zh: "zh-CN",
@@ -1569,7 +1569,7 @@
             const copy = translations[resolvedLocale];
 
             document.documentElement.lang = resolvedLocale;
-            document.documentElement.dir = rtlLocales.has(resolvedLocale) ? "rtl" : "ltr";
+            document.documentElement.dir = rightToLeftLocales.has(resolvedLocale) ? "rtl" : "ltr";
             document.title = copy.pageTitle;
 
             const description = document.querySelector('meta[name="description"]');
