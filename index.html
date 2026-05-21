@@ -569,6 +569,31 @@
             font-size: 14px;
         }
 
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(31, 26, 23, 0.55);
+            transition: color 0.18s;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            color: rgba(31, 26, 23, 0.9);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
         @keyframes rise {
             from {
                 opacity: 0;
@@ -854,7 +879,24 @@
         <footer class="site-footer">
             <div class="container footer-row">
                 <p class="footer-text">© <span id="year"></span> SynoSync. <span data-i18n="footerTagline"></span></p>
-                <a class="footer-text" href="https://gadore.top" target="_blank" rel="noopener noreferrer">https://gadore.top</a>
+                <div class="footer-social">
+                    <!-- Blog -->
+                    <a href="https://blog.gadore.top" target="_blank" rel="noopener noreferrer" aria-label="Visit author's blog">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93V18a1 1 0 0 1 2 0v1.93A8.001 8.001 0 0 1 4.07 13H6a1 1 0 0 1 0 2H4.07A8.001 8.001 0 0 1 11 19.93zM12 4a8 8 0 0 1 7.93 7H18a1 1 0 0 1 0-2h1.93A8.001 8.001 0 0 1 13 4.07V6a1 1 0 0 1-2 0V4.07A8.018 8.018 0 0 1 12 4zm0 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+                    </a>
+                    <!-- Weibo -->
+                    <a href="https://weibo.com/u/1682726775" target="_blank" rel="noopener noreferrer" aria-label="Follow on Weibo">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.6-2.759 5.049-6.739 5.443zm5.44-13.294c-.428-.12-.718-.202-.495-.73.484-1.214.533-2.261.01-3.011-.98-1.409-3.66-1.334-6.737.031 0 0-.964.422-.717-.341.471-1.528.399-2.807-.337-3.545-1.663-1.663-6.086.062-9.872 3.85C-1.222 6.694-2 9.417-2 11.747c0 4.658 5.979 7.49 11.831 7.49 7.666 0 12.766-4.461 12.766-8.006 0-2.138-1.806-3.354-3.059-3.703v.001zm1.311-3.268c-.335-.087-.559-.145-.386-.563.38-.948.417-1.766.008-2.35-.768-1.099-2.859-1.041-5.259.024 0 0-.753.33-.56-.266.368-1.193.311-2.191-.264-2.769-1.298-1.298-4.754.048-7.706 3.007C.978 3.598.5 5.631.5 7.41c0 3.633 4.666 5.844 9.233 5.844 5.982 0 9.961-3.48 9.961-6.246 0-1.668-1.409-2.618-2.386-2.889l-.459-.358zm-8.08 11.338a4.856 4.856 0 0 1-4.856-4.856 4.856 4.856 0 0 1 4.856-4.856 4.856 4.856 0 0 1 4.856 4.856 4.856 4.856 0 0 1-4.856 4.856zm0-8.447a3.591 3.591 0 0 0-3.592 3.591 3.591 3.591 0 0 0 3.592 3.592 3.591 3.591 0 0 0 3.591-3.592 3.591 3.591 0 0 0-3.591-3.591zm0 5.616a2.025 2.025 0 1 1 0-4.05 2.025 2.025 0 0 1 0 4.05z"/></svg>
+                    </a>
+                    <!-- X (Twitter) -->
+                    <a href="https://x.com/qianlizhihao" target="_blank" rel="noopener noreferrer" aria-label="Follow on X">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:haochengdong@outlook.com" aria-label="Contact via email">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V8.236l8 5 8-5V18z"/></svg>
+                    </a>
+                </div>
             </div>
         </footer>
     </div>
